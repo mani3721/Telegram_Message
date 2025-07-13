@@ -54,3 +54,8 @@ async def get_chats():
 async def send(chat_id: int, message: str):
     await send_to_chat(chat_id, message)
     return {"status": "sent", "chat_id": chat_id}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=10000, reload=True)
